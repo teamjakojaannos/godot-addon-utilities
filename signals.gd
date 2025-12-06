@@ -16,3 +16,8 @@ static func try_disconnect(s: Signal, callable: Callable) -> bool:
 		return true
 
 	return false
+
+static func alias(original: Signal, alias: Signal) -> bool:
+	return original.connect(func(...args: Array):
+		alias.emit(args)
+	)
