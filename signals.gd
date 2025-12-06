@@ -19,5 +19,5 @@ static func try_disconnect(s: Signal, callable: Callable) -> bool:
 
 static func alias(original: Signal, alias: Signal) -> bool:
 	return original.connect(func(...args: Array):
-		alias.emit(args)
+		alias.emit.bindv(args).call()
 	)
