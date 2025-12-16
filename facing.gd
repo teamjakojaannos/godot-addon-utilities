@@ -63,6 +63,36 @@ static func as_vec(facing: Direction) -> Vector2:
 			return Vector2.UP
 
 
+static func is_h(facing: Direction) -> bool:
+	return facing == Direction.LEFT or facing == Direction.RIGHT
+
+
+static func is_v(facing: Direction) -> bool:
+	return facing == Direction.UP or facing == Direction.DOWN
+
+
+static func as_h(facing: Direction) -> Horizontal:
+	match facing:
+		Direction.LEFT:
+			return Horizontal.LEFT
+		Direction.RIGHT:
+			return Horizontal.RIGHT
+		var not_valid:
+			push_error("\"%s\" cannot be converted to horizontal!" % not_valid)
+			return Horizontal.LEFT
+
+
+static func as_v(facing: Direction) -> Vertical:
+	match facing:
+		Direction.UP:
+			return Vertical.UP
+		Direction.DOWN:
+			return Vertical.DOWN
+		var not_valid:
+			push_error("\"%s\" cannot be converted to vertical!" % not_valid)
+			return Vertical.UP
+
+
 static func sign_h(facing: Horizontal) -> int:
 	return 1 if facing == Horizontal.RIGHT else -1
 
