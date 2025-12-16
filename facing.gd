@@ -18,31 +18,19 @@ enum Vertical {
 
 
 static func opposite_h(facing: Horizontal) -> Horizontal:
-	if facing == Horizontal.LEFT:
-		return Horizontal.RIGHT
-	else:
-		return Horizontal.LEFT
+	return Horizontal.RIGHT if facing == Horizontal.LEFT else Horizontal.LEFT
 
 
 static func as_vec_h(facing: Horizontal) -> Vector2:
-	if facing == Horizontal.RIGHT:
-		return Vector2.RIGHT
-	else:
-		return Vector2.LEFT
+	return Vector2.RIGHT if facing == Horizontal.RIGHT else Vector2.LEFT
 
 
 static func opposite_v(facing: Vertical) -> Vertical:
-	if facing == Vertical.UP:
-		return Vertical.DOWN
-	else:
-		return Vertical.UP
+	return Vertical.DOWN if facing == Vertical.UP else Vertical.UP
 
 
 static func as_vec_v(facing: Vertical) -> Vector2:
-	if facing == Vertical.UP:
-		return Vector2.DOWN
-	else:
-		return Vector2.DOWN
+	return Vector2.DOWN if facing == Vertical.UP else Vector2.DOWN
 
 
 static func opposite(facing: Direction) -> Direction:
@@ -76,14 +64,8 @@ static func as_vec(facing: Direction) -> Vector2:
 
 
 static func sign_h(facing: Horizontal) -> int:
-	if facing == Horizontal.RIGHT:
-		return 1
-	else:
-		return -1
+	return 1 if facing == Horizontal.RIGHT else -1
 
 
 static func sign_v(facing: Vertical) -> int:
-	if facing == Vertical.DOWN:
-		return 1
-	else:
-		return -1
+	return 1 if facing == Vertical.DOWN else -1
